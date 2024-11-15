@@ -1,6 +1,6 @@
 {
-    "name": "前端笔记",
-    "short_name": "前端笔记",
+    "name": "代码片段",
+    "short_name": "代码片段",
     "start_url": "/",
     "display": "standalone",
     "theme_color": "#ffffff",

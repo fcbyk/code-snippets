@@ -3,8 +3,12 @@ import { DefaultTheme } from "vitepress"
 const sidebar: DefaultTheme.SidebarItem[] = [
 
     {
-        text: "导航栏",
+        text: "一些想法",
         link: "/",
+    },
+    {
+        text: "Docker",
+        link: "/docker",
     }
 ]
 

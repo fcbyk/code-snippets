@@ -1,20 +1,15 @@
-// 定义vp站点的全局设置，配置文件应该默认导出一个对象
-// 该数据结构可通过TypeScript中的声明语句进行查看
-
-// 辅助函数，参数为一个配置对象，函数的返回值也是一个配置对象，只是多了选项提示
 import { DefaultTheme, defineConfig } from 'vitepress'
 import { sidebar } from './config/sidebar'
 import { nav } from './config/nav'
 import { search } from './config/search'
 
-// 默认导出
 export default defineConfig({
 
   srcDir: "docs",
 
   outDir: "dist",
 
-  title: "前端笔记",
+  title: "代码片段",
 
   head: [
     ['meta', { name: 'theme-color', content: '#ffffff' }],
@@ -31,14 +26,12 @@ export default defineConfig({
 
   cleanUrls: true,
 
-  // 主题相关配置
   themeConfig: {
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/fcbyk/notes' }
+      { icon: 'github', link: 'https://github.com/fcbyk/code-snippet' }
     ],
 
-    // 把页面默认的英文改中文
     darkModeSwitchLabel: "夜间模式",
     sidebarMenuLabel: "文档",
     returnToTopLabel: "返回顶部",
@@ -49,11 +42,8 @@ export default defineConfig({
       next: '下一篇'
     },
 
-    // 配置侧边栏
     sidebar,
-
     nav,
-
     search,
   }
 })
