@@ -1,0 +1,12 @@
+{
+	"new region": {
+		"scope": "javascript,typescript",
+		"prefix": "new-s",
+		"body": [
+			"// #region $1",
+			"",
+			"// #endregion $1"
+		],
+		"description": "新建一个代码片段"
+	}
+}

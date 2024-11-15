@@ -1,4 +1,4 @@
-# region 0002
+# region A01
 docker run -d \
   --name nginx \
   --network code-server-network
@@ -9,9 +9,9 @@ docker run -d \
   -v /usr/nginx/certs:/etc/nginx/certs \
   -u "$(id -u):$(id -g)" \
   nginx:latest
-# endregion 0002
+# endregion A01
 
-# region 0002-1
+# region A01-1
 docker run -d \
   --name code-server \
   --network code-server-network \
@@ -24,4 +24,4 @@ docker run -d \
   -p 5173:5173 \
   -p 5174:5174 \
   codercom/code-server:latest
-# endregion 0002-1
+# endregion A01-1

@@ -1,4 +1,4 @@
-// #region 0001
+// #region A00
 class Count{
     #sum
 
@@ -19,10 +19,10 @@ class Count{
         return this.sum
     }
 }
-// #endregion 0001
+// #endregion A00
 
-// #region 0001-1
+// #region A00-1
 let count = new Count(10)
 count.add(1)(4)(23)(24)(66)(434)(33)(34)  // [!code highlight]
 console.log(count.getSum())
-// #endregion 0001-1
+// #endregion A00-1

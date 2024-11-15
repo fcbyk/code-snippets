@@ -9,6 +9,14 @@ const sidebar: DefaultTheme.SidebarItem[] = [
     {
         text: "Docker",
         link: "/docker",
+    },
+    {
+        text: "Git",
+        link: "/git",
+    },
+    {
+        text: "Vue",
+        link: "/vue",
     }
 ]
 

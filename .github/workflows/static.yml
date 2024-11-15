@@ -41,7 +41,7 @@ jobs:
 
       # copy CNAME
       - name: Build VitePress site
-        run: cp CNAME dist
+        run: cp .github/CNAME dist
 
       # 查看 workflow 的文档来获取更多信息
       # @see https://github.com/crazy-max/ghaction-github-pages

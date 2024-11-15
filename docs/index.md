@@ -3,11 +3,11 @@ layout: doc
 outline: [2,3]
 ---
 
-### 无限括号
+### A00 无限括号
 
 ::: code-group
 
-<<< @/snippets/ideas.js#0001-1 [test]
-<<< @/snippets/ideas.js#0001 [src]
+<<< @/../src/ideas.js#A00-1 [test]
+<<< @/../src/ideas.js#A00 [src]
 
 :::
