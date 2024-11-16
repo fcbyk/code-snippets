@@ -7,8 +7,8 @@ outline: [2,3]
 
 ::: code-group
 
-<<< @/../src/docker.sh#A01 [nginx]
-<<< @/../src/docker.sh#A01-1 [code-server]
+<<< @/../code/docker.sh#A01 [nginx]
+<<< @/../code/docker.sh#A01-1 [code-server]
 
 :::
 <ID>A01</ID>

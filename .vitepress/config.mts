@@ -11,6 +11,8 @@ export default defineConfig({
 
   title: "代码片段",
 
+  lastUpdated: true,
+
   head: [
     ['meta', { name: 'theme-color', content: '#ffffff' }],
     ['link', { rel: 'manifest', href: '/manifest.webmanifest' }],
@@ -40,6 +42,19 @@ export default defineConfig({
     docFooter: {
       prev: '上一篇',
       next: '下一篇'
+    },
+
+    editLink: {
+      pattern: 'https://github.com/fcbyk/code-snippets/tree/main/docs/:path',
+      text: '在 GitHub 上编辑此页面'
+    },
+
+    lastUpdated: {
+      text: '最后更新于',
+      formatOptions: {
+        dateStyle: 'short',
+        timeStyle: 'medium'
+      }
     },
 
     sidebar,
