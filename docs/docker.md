@@ -3,7 +3,7 @@ layout: doc
 outline: [2,3]
 ---
 
-### A01 常用软件部署
+### 常用软件部署
 
 ::: code-group
 
@@ -11,3 +11,4 @@ outline: [2,3]
 <<< @/../src/docker.sh#A01-1 [code-server]
 
 :::
+<ID>A01</ID>

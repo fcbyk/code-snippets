@@ -3,8 +3,10 @@ layout: doc
 outline: [2,3]
 ---
 
-### A08 Hello Vue
+### Hello Vue
 <<< @/../src/vue/hello.html#A08
+<ID>A08</ID>
 
-### A09 自定义指令
+### 自定义指令
 <<< @/../src/vue/index.vue#A09
+<ID>A09</ID>
