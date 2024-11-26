@@ -1,20 +1,7 @@
 import { DefaultTheme } from "vitepress";
 
 // 主页目录
-const index: DefaultTheme.SidebarItem[] = [
-  {
-    text: "一些想法",
-    link: "/",
-  },
-  {
-    text: "Docker",
-    link: "/docker",
-  },
-  {
-    text: "Git",
-    link: "/git",
-  }
-];
+const index: DefaultTheme.SidebarItem[] = [];
 
 // 前端目录
 const frontend: DefaultTheme.SidebarItem[] = [
@@ -55,7 +42,15 @@ const frontend: DefaultTheme.SidebarItem[] = [
   },
 ];
 
+const os: DefaultTheme.SidebarItem[] = [
+  {
+    text:"Docker",
+    link:"/os/docker"
+  }
+]
+
 export const sidebar: DefaultTheme.Sidebar = {
   "/": index,
-  "/frontend/": frontend,
+  // "/frontend/": frontend,
+  "/os/": os
 };

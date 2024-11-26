@@ -9,26 +9,27 @@ export default defineConfig({
 
   outDir: "dist",
 
-  title: "代码片段",
+  title: "SNIPPETS",
 
   lastUpdated: true,
 
   head: [
-    ['meta', { name: 'theme-color', content: '#ffffff' }],
     ['link', { rel: 'manifest', href: '/manifest.webmanifest' }],
-    ['meta', { name: 'theme-color', content: '#ffffff' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: '#ffffff' }],
-    ['meta', { name: 'msapplication-TileColor', content: '#ffffff' }],
-    ['meta', { name: 'msapplication-TileImage', content: '/icon.png' }],
-    ['link', { rel: 'apple-touch-icon', href: '/icon.png' }],
-    ['link', { rel: 'mask-icon', href: '/icon.png', color: '#3eaf7c' }],
-    ['link', { rel: 'stylesheet', href: 'https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' }]
+    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'default' }],
+    ['meta', { name: 'msapplication-TileImage', content: '/logo.svg' }],
+    ['link', { rel: 'apple-touch-icon', href: '/logo.svg' }],
+    ['link', { rel: 'mask-icon', href: '/logo.svg', color: '#3eaf7c' }],
+    ['link', { rel: 'icon', href: '/logo.svg', type: 'image/svg+xml' }],
+    ['link', { rel: 'stylesheet', href: 'https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' }],
   ],
 
   cleanUrls: true,
+  metaChunk:true,
 
   themeConfig: {
+
+    logo: "/logo.svg",
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/fcbyk/code-snippet' }
