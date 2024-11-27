@@ -4,18 +4,17 @@ import { DefaultTheme } from "vitepress";
 const index: DefaultTheme.SidebarItem[] = [];
 
 // 前端目录
-const frontend: DefaultTheme.SidebarItem[] = [
+const fe: DefaultTheme.SidebarItem[] = [
   {
     text: "前端",
     items: [
       {
         text: "HTML",
-        link: "/frontend/html",
+        link: "/fe/html",
       },
       {
         text: "样式",
-        base: "/frontend/style-",
-        collapsed: true,
+        base: "/fe/style-",
         items: [
           { text: "CSS", link: "css" },
           { text: "Less", link: "less" },
@@ -24,16 +23,15 @@ const frontend: DefaultTheme.SidebarItem[] = [
       },
       {
         text: "JavaScript",
-        link: "/frontend/js",
+        link: "/fe/js",
       },
       {
         text: "TypeScript",
-        link: "/frontend/ts",
+        link: "/fe/ts",
       },
       {
         text: "框架",
-        base: "/frontend/framework-",
-        collapsed: true,
+        base: "/fe/framework-",
         items: [
           { text: "Vue", link: "vue" },
         ],
@@ -42,15 +40,49 @@ const frontend: DefaultTheme.SidebarItem[] = [
   },
 ];
 
+// 操作系统目录
 const os: DefaultTheme.SidebarItem[] = [
   {
-    text:"Docker",
-    link:"/os/docker"
+    text:"操作系统"
+    items:[
+        {
+          text:"软件"
+          base: "/os/sf-",
+          items:[
+            {
+              text:"Docker",
+              link:"docker"
+            }，
+            {
+              text:"Git",
+              link:"git"
+            },
+            {
+              text:"Nginx",
+              link:"nginx"
+            }
+          ]
+        }，
+        {
+          text:"数据库"
+          base: "/os/db-",
+          items:[
+            {
+              text:"MySQL",
+              link:"mysql"
+            }，
+            {
+              text:"Redis",
+              link:"redis"
+            }
+          ]
+        }    
+      ]
   }
 ]
 
 export const sidebar: DefaultTheme.Sidebar = {
   "/": index,
-  // "/frontend/": frontend,
+  "/fe/": fe,
   "/os/": os
 };
