@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.fcbyk</groupId>
+    <artifactId>javaee</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <!-- 炸包，哇包  -->
+    <!-- 打包方式，默认为 jar包，web项目需要打包成 war包 -->
+    <packaging>war</packaging>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+
+        <!-- servlet 依赖 -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+
+            <!-- scope设置为 provided。这意味着在编译和测试阶段依赖项会被包含，但在打包成 WAR 文件时不会被包含 -->
+            <!--
+              此处为什么需要添加该标签?
+              provided指的是在编译和测试过程中有效,最后生成的war包时不会加入
+               因为Tomcat的lib目录中已经有servlet-api这个jar包，如果在生成war包的时候生效就会和Tomcat中的jar包冲突，导致报错
+            -->
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- 单元测试  -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+        </dependency>
+
+        <!--  JDBC  -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.48</version>
+        </dependency>
+
+        <!--  数据库连接池Druid  -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+
+        <!--mybatis 依赖-->
+        <dependency>
+            <groupId>org.mybatis</groupId>
+            <artifactId>mybatis</artifactId>
+            <version>3.5.5</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!--Tomcat插件 -->
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <port>80</port><!--访问端口号 -->
+                    <path>/</path>
+                    <!-- 使用命令运行插件: mvn tomcat7:run -->
+                    <!-- 如果是idea内置的maven，请使用GUI形式执行maven命令 -->
+                    <!-- 浏览器访问: http://localhost/-->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

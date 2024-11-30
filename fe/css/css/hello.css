@@ -1,0 +1,20 @@
+/* 使用 @import 可以在原样式规则中导入其他样式表，可以在外部样式、style标签中使用 */
+@import url("hello-i.css");
+@import "hello-css.css";
+
+/* CSS语法：选择器 { 以及一条或多条声明 }  */
+/* 声明：属性 : 属性值 ; */
+
+p{
+    text-decoration-line:line-through;
+}
+
+/* 错误 */
+/* 样式规则如果存在错误，解析器会选择忽略，并不会影响其他样式规则。 */
+#app{
+    /* 无效样式 */
+    hello:red;
+
+    /* 但不影响后面的 border 规则使用 */
+    border: rgb(192, 13, 13) 1px solid;
+}
