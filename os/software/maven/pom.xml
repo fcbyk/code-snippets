@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--XML声明，指定了XML版本和编码。-->
+
+<!-- Maven项目的根元素 -->
+<!-- xmlns指定了XML命名空间为Maven POM版本4.0.0 -->
+<!-- xmlns:xsi指定了XML Schema实例的命名空间 -->
+<!-- xsi：指定了XML Schema的位置 -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion><!--  指定了POM模型的版本。  -->
+
+    <groupId>com.fcbyk</groupId><!--  项目的groupId，用于唯一标识项目  -->
+    <artifactId>maven</artifactId><!--  项目的artifactId，用于唯一标识项目构建产物（例如JAR文件）  -->
+    <version>1.0-SNAPSHOT</version><!-- 项目的版本号。SNAPSHOT表示这是一个开发中的版本 -->
+
+
+    <properties><!--  用于定义项目中可重用的属性  -->
+        <maven.compiler.source>8</maven.compiler.source><!--指定了Java编译器的源代码版本为Java 8-->
+        <maven.compiler.target>8</maven.compiler.target>
+    </properties>
+
+
+    <dependencies><!-- 项目的依赖声明部分 -->
+
+        <dependency><!-- 依赖项坐标 -->
+            <groupId>junit</groupId><!--依赖项的groupId，指定了依赖的组织或项目-->
+            <artifactId>junit</artifactId><!--依赖项的artifactId，指定了依赖的项目或模块-->
+            <version>4.12</version><!--依赖项的版本号-->
+            <scope>test</scope><!--指定了依赖项的作用域为测试（即只在测试阶段生效，不会影响生产环境的构建）。-->
+        </dependency>
+
+    </dependencies>
+
+</project>

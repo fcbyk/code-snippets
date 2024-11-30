@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <!-- 
+    使用 <%= BASE_URL %> 变量作为基础 URL 根目录的占位符，
+    在构建时会被替换为实际的基础 URL 地址，
+    确保正确引用到根目录下的 favicon.ico 图标文件。
+    -->
+    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+
+    <title><%= htmlWebpackPlugin.options.title %></title>
+  </head>
+  <body>
+    <noscript>
+      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>

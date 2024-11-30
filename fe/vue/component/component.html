@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>component</title>
+</head>
+
+<body>
+    <!-- 组件使用步骤: 定义组件、注册组件、使用组件 -->
+
+    <!-- 定义组件 -->
+    <!-- Vue对象extend静态方法：传入参数为组件选项对象，返回值为VueComponent的构造函数 -->
+    <!-- 每次调用Vue.extend，返回的都是一个全新的VueComponent，每个组件都是不同的构造器生成的 -->
+    <script>
+        const school = Vue.extend({
+            template: `
+                    <div class="demo">
+                    <h2>学校名称：{{schoolName}}</h2>
+                    <h2>学校地址：{{address}}</h2>
+                    <button @click="showName">点我提示学校名</button>	
+                    </div>
+                    `,
+            data() {
+                return {
+                    schoolName: '尚硅谷',
+                    address: '北京昌平'
+                }
+            },
+            methods: {
+                showName() {
+                    alert(this.schoolName)
+                }
+            },
+        })
+
+        console.dir(school)
+    </script>
+
+    <!-- 注册组件 -->
+    <!-- 局部注册：靠new Vue的时候传入components选项 -->
+    <!-- 全局注册：靠Vue.component('组件名',组件) -->
+
+    <div id="app-1">
+        <!-- 使用组件 -->
+        <school></school>
+    </div>
+    <script>
+        new Vue({
+            el:"#app-1",
+            components:{
+                school
+            }
+        })
+    </script>
+</body>
+
+</html>

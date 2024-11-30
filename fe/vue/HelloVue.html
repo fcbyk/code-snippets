@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hello world</title>
+
+    <!-- CDN引入vue -->
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <!-- 生产环境版本，优化了尺寸和速度 -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2"></script> -->
+
+    <!-- vue官方文档 https://v2.cn.vuejs.org/ -->
+</head>
+<body>
+    <!-- Hello World -->
+    <!-- 准备一个容器 -->
+    <div id="app">
+        <!-- 容器内可使用Vue的模板语法 -->
+        {{ message }}
+    </div>
+    <script>
+
+        // 创建Vue实例，该实例管理这个容器的数据，模板，和行为
+        // 传入参数为一个选项对象，返回值为Vue实例
+        let app = new Vue({
+
+            // el用于指定当前Vue实例为哪个容器服务，值通常为css选择器字符串
+            el: '#app',
+
+            // data中用于存储数据，数据供el所指定的容器去使用
+            data: {
+                message: 'Hello Vue!'
+            },
+
+            // 使用模板选项，会覆盖容器内的模板
+            // template: '<p>{{ message }} 123456</p>'
+
+        })
+
+        console.dir(Vue)
+        console.log(app)
+
+    </script>
+
+    <!-- 
+    使用 new Vue() 构造函数创建一个 Vue 实例时，Vue.js 首先会进行一系列的初始化操作，其中包括以下几个关键步骤：
+
+    1 解析选项对象： Vue 实例的选项对象包含了各种配置，例如 data、methods、computed 等，Vue.js 会首先解析这些选项，确定实例的行为和特性。
+
+    2 创建响应式数据： Vue.js 会将 data 选项中的数据转换为响应式的数据，这意味着当数据发生变化时，相关的视图会自动更新。Vue 使用了 Object.defineProperty 或 Proxy 等技术来实现数据的监听和变化检测。
+    
+    3 编译模板： 如果实例选项中包含了 template，Vue.js 会将模板编译成渲染函数。在编译过程中，Vue 会将模板中的指令、表达式等转换成对应的 JavaScript 代码。
+
+    4 创建虚拟 DOM： 在渲染过程中，Vue.js 使用虚拟 DOM 来描述页面的结构和状态。虚拟 DOM 是一个轻量级的 JavaScript 对象，它对应着真实 DOM 中的节点，并且可以高效地进行比较和更新。
+
+    5 挂载实例： 最后，Vue.js 将实例挂载到指定的 DOM 元素上（通过 el 选项指定）。这个过程会将虚拟 DOM 渲染成真实 DOM，并且建立实例和 DOM 元素之间的联系。
+
+    在整个过程中，虚拟 DOM 起着重要的作用。它使得 Vue.js 能够在内存中高效地进行 DOM 操作，而不必直接操作真实 DOM，从而提高了性能和效率。当数据发生变化时，Vue.js 会通过比较新旧虚拟 DOM，找出需要更新的部分，并将更新的内容同步到真实 DOM 上，以确保页面的显示与数据的状态保持一致。 
+    -->
+
+</body>
+</html>
+

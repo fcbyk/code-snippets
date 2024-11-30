@@ -1,0 +1,91 @@
+<!-- 
+ 所有HTML元素可以看作盒子，在CSS中，"box model"这一术语是用来设计和布局时使用。
+CSS盒模型本质上是一个盒子，封装周围的HTML元素，它包括：边距，边框，填充，和实际内容。
+盒模型允许我们在其它元素和周围元素边框之间的空间放置元素。
+
+Margin(外边距) - 清除边框外的区域，外边距是透明的。
+Border(边框) - 围绕在内边距和内容外的边框。
+Padding(内边距) - 清除内容周围的区域，内边距是透明的。
+Content(内容) - 盒子的内容，显示文本和图像。
+-->
+
+
+<!-- 盒子宽度 -->
+<div class="f-box">
+    <div class="box1"></div>
+</div>
+
+<style>
+
+    .f-box{
+        border: solid black 1px;
+    }
+
+    .box1{
+        width: 50%; /* 默认宽度为50% */
+        min-width: 200px; /* 设置元素的最小宽度，元素的宽度不会小于这个值 */
+        max-width: 600px; /* 设置元素的最大宽度，元素的宽度不会大于这个值 */
+        background-color: lightblue;
+        margin: 0 auto; /* 居中对齐 */
+        padding: 20px;
+        box-sizing: border-box; /* 包含内边距和边框 */
+        text-align: center;
+    }
+
+</style>
+
+<!-- 盒子高度 -->
+<div class="f-box">
+    <div class="box2"></div>
+</div>
+
+<style>
+
+    .box2{
+        height: 50vh;
+        min-height: 300px; /* 最小高度 */
+        max-height: 1000px; /* 最大高度 */
+        background-color: lightgreen;
+        padding: 10px;
+        overflow-y: auto; /* 当内容超过max-height时出现滚动条 */
+    }
+
+</style>
+
+
+<!-- Margin(外边距) -->
+<div class="f-box">
+    <div class="box3"></div>
+</div>
+
+<style>
+
+    .box3{
+        width: 100px;
+        height: 100px;
+        background-color: blueviolet;
+
+        /* 单独设置外边距 */
+        margin-bottom: 15px;
+        margin-left: 20px;
+        margin-top: 10px;
+        margin-right: 10px;
+
+        /* 简写属性 */
+        /* margin 设置 auto 后，浏览器会自动居中 */
+        margin: 100px;
+
+        /* 上边距是 10px，右边距是 5px，下边距是 15px，左边距是 20px */
+        margin: 10px 5px 15px 20px;
+        
+        /* 上边距是 10px，右边距和左边距是 5px，下边距是 15px */
+        margin:10px 5px 15px;
+        
+        /* 上边距和下边距是 10px，右边距和左边距是 5px */
+        margin:10px 5px;
+        
+        /* 所有四个边距都是 10px，可以发现是顺时针赋值 */
+        margin:10px;
+    }
+
+</style>

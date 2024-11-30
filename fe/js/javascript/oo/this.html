@@ -1,0 +1,121 @@
+<script>
+/**
+ * 在 JavaScript 中，this 可以被视作一个指针或者引用
+ * this 是动态的，会根据代码的上下文而变化
+ * this 指向一个对象（this 的值可以是对象类型、undefined 类型）
+ */
+
+/**
+ * 上下文（context）
+ * 在计算机编程中，“上下文”（context）通常指的是代码执行时的环境或者背景，它可以是函数执行的环境，也可以是整个程序执行的环境
+ * 
+ * 函数上下文（Function Context）
+ * 指的是函数执行时的环境，包括函数内部的变量、作用域链、以及特殊关键字如this的值。每次调用函数时，都会创建一个新的函数上下文。
+ * 
+ * 全局上下文（Global Context）
+ * 是指整个程序执行时的环境，它包括全局变量和函数的定义，以及全局对象（如浏览器环境中的 window 对象）。
+ * 
+ * 对象上下文（Object Context）
+ * 当函数作为对象的方法调用时，该函数的执行上下文就是该对象的上下文，函数内部可以通过 this 关键字引用到该对象。
+ * 
+ * 词法上下文（Lexical Context）
+ * 指的是代码编写时的静态环境，即作用域链的形成和闭包的产生都是在词法分析阶段确定的。
+ * 
+ * 上下文在编程中非常重要，因为它决定了代码执行时变量的可见性和作用域规则，也决定了一些特殊关键字如 this 的绑定情况。
+ * 理解代码执行时的上下文有助于我们正确地预测代码行为和解决问题
+ */
+</script>
+
+<!-- 全局上下文 -->
+<script>
+    console.log("全局上下文" + this); // window
+</script>
+
+<!-- 模块上下文 -->
+<script type="module">
+    console.log("模块上下文" + this); // undefined
+</script>
+
+<!-- 函数上下文 -->
+<script>
+
+    (function () {
+        console.log("函数上下文" + this); // window
+    })();
+
+    (function () {
+        "use strict"
+        console.log("函数上下文(严格模式)" + this); // undefined
+    })();
+
+    // 箭头函数的 this 是在定义函数时确定的，它会捕获最近的非箭头函数作用域的 this 值，并且无法被改变。
+    (() => {
+        console.log("箭头函数上下文" + this); // window
+        new (function (name) {
+            this.name = name;
+            (()=>{
+                console.log("普通函数内的箭头函数" + this + this.name);
+            })();
+        })("hhhh");
+    })();
+
+    new (function (name) {
+        this.name = name
+        console.log("函数的上下文(使用new调用)" + this + this.name); // 当前对象
+    })("张三");
+</script>
+
+<!-- 对象上下文 -->
+<script>
+    const obj = {
+        name: 'Alice',
+        log: function () {
+            console.log("对象方法上下文" + this + this.name);
+        },
+        child:{
+            name:"大头",
+            log: function () {
+                console.log("子对象方法上下文" + this + this.name);
+            },
+
+            // 最近的非箭头函数作用域没有，指向全局的window
+            test:()=>{
+                console.log("子对象箭头函数上下文" + this + this.name);     // window
+            }
+        }
+    };
+
+    obj.log()
+    obj.child.log()
+    obj.child.test()
+</script>
+
+<!-- 
+绑定this
+JavaScript提供了几个方法来显式地绑定this的值：call、apply和bind
+-->
+<script>
+// call 和 apply
+// 这两个方法都可以用来调用函数并显式地指定this的值。
+// 区别在于传递参数的方式不同：call接受的是参数列表，而apply接受的是参数数组。
+function greet(greeting,sdsd) {
+    console.log(greeting + sdsd+', ' + this + this.name);
+}
+
+const person = { name: 'call' };
+
+greet.call(person, 'Hello'); // 输出 'Hello, Alice'
+greet.apply(person, ['Hi',"www"]); // 输出 'Hiwww, Alice'
+greet("hhhh");
+
+// bind方法返回一个新的函数，并且这个函数的this值被永久地绑定到指定的对象。
+function greet1() {
+    console.log(this.name);
+}
+
+const person1 = { name: 'bind方法' };
+
+const boundGreet = greet1.bind(person1);
+boundGreet(); // 输出 'bind方法'
+
+</script>

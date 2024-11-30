@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>template</title>
+</head>
+<body>
+
+    <!-- 插值语法 Interpolations -->
+    
+    <div id="app-1">
+
+        <!-- 插值是最基本的 Vue 模板语法，用双大括号 {{ }} 将数据绑定到 HTML 中 -->
+        <p>{{msg}}</p>
+
+        <!-- 通过使用 v-once 指令，执行一次性地插值，当数据改变时，插值处的内容不会更新 -->
+        <span v-once>这个将不会改变: {{ msg }}</span>
+
+        <!-- 双括号语法不能作用在 HTML attribute 上，遇到这种情况应该使用 v-bind 指令 -->
+        <p v-bind:style="color">你好</p>
+
+
+
+    </div>
+    <script>
+        const vm1 = new Vue({
+            el:"#app-1",
+            data:{
+                msg:"hello",
+                color:"color: #8b3737"
+            },
+        })
+
+        // 5秒后改变data里面的数据
+        setTimeout(()=>{
+            vm1.msg = "《数据已改变》"
+            vm1.color = "color: #fb003b"
+        }, 5000); 
+    </script>
+
+    
+</body>
+</html>

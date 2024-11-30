@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fcbyk.javaee.web.dao.mapper.StudentMapper">
+
+    <select id="selectAll" resultType="com.fcbyk.javaee.web.pojo.Student">
+        select * from Student;
+    </select>
+
+<!--    注释掉，使用注解开发 -->
+<!--    <select id="select" resultType="cn.zcoder.stdweb.dao.cn.zcoder.stdweb.pojo.Student">-->
+<!--        select * from Student where Sno = #{sno};-->
+<!--    </select>-->
+
+</mapper>

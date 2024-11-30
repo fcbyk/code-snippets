@@ -43,16 +43,16 @@ const fe: DefaultTheme.SidebarItem[] = [
 // 操作系统目录
 const os: DefaultTheme.SidebarItem[] = [
   {
-    text:"操作系统"
+    text:"操作系统",
     items:[
         {
-          text:"软件"
+          text:"软件",
           base: "/os/sf-",
           items:[
             {
               text:"Docker",
               link:"docker"
-            }，
+            },
             {
               text:"Git",
               link:"git"
@@ -62,15 +62,15 @@ const os: DefaultTheme.SidebarItem[] = [
               link:"nginx"
             }
           ]
-        }，
+        },
         {
-          text:"数据库"
+          text:"数据库",
           base: "/os/db-",
           items:[
             {
               text:"MySQL",
               link:"mysql"
-            }，
+            },
             {
               text:"Redis",
               link:"redis"
