@@ -5,9 +5,7 @@ import { search } from './config/search'
 
 export default defineConfig({
 
-  srcDir: "docs",
-
-  outDir: "dist",
+  outDir: "./../dist",
 
   title: "SNIPPETS",
 

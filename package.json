@@ -7,9 +7,9 @@
     "vue": "^3.4.25"
   },
   "scripts": {
-    "dev": "vitepress dev",
-    "build": "vitepress build",
-    "release": "find dist -type d -exec chmod 755 {} \\; && find dist -type f -exec chmod 644 {} \\;"
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "release": "find ./docs/dist -type d -exec chmod 755 {} \\; && find dist -type f -exec chmod 644 {} \\;"
   },
   "author": "不是不余",
   "license": "MIT"

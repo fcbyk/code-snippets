@@ -99,11 +99,11 @@ docker exec -e MY_VAR=value my-container env
 docker exec -it my-container /bin/bash
 # endregion exec
 
-# region status
+# region start
 docker start mc1 mc2
 docker stop mc1
 docker restart mc1
-# endregion status
+# endregion start
 
 # region rm
 docker rm mc1
