@@ -1,43 +1,122 @@
-<head hello="自定义属性"><!-- 一般head元素不可见，body元素可见 -->
-    
-    <!-- head元素里面为文档说明部分，对搜索引擎提供信息或加载 CSS、JS 等 -->
+<!-- #region title -->
+<head>
+    <title>我的技术博客</title>
+</head>
+<!-- #endregion title -->
 
-    <!-- meta 元数据元素，DOM 接口 HTMLMetaElement -->
-    <!-- 如果设置了 charset 属性，<meta> 元素是一个字符集声明，告诉文档使用哪种字符编码 -->
+<!-- #region meta -->
+<head>
     <meta charset="UTF-8">
 
-    <!-- 如果设置了 http-equiv 属性，<meta> 元素则是编译指令，提供的信息与类似命名的 HTTP 头部相同。 -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <!-- 如果设置了 name 属性，<meta> 元素提供的是文档级别（document-level）的元数据，应用于整个页面。 -->
-    <!-- content属性，包含http-equiv 或name 属性的值，具体取决于所使用的值-->
-    <!-- name 和 content 属性一起使用，以名 - 值对的方式给文档提供元数据，其中 name 作为元数据的名称，content 作为元数据的值 -->
+    <!-- 视口设置（移动端响应式） -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- 与页面内容相关的关键词，使用逗号分隔。 -->
-    <meta name="keyword" content="笔记,html,前端" />
+    <!--  SEO相关元信息 -->
+    <meta name="description" content="这是一个关于HTML meta标签的详细介绍">
+    <meta name="keywords" content="HTML, meta标签, 网页开发">
+    <meta name="author" content="张三">
 
-    <!-- description：一段简短而精确的、对页面内容的描述。一些浏览器，比如 Firefox 和 Opera，将其用作书签的默认描述 -->
-    <meta name="description" content="html笔记，前端笔记" />
+    <!-- 搜索引擎控制 -->
+    <meta name="robots" content="noindex, nofollow">
 
-    <title>head</title> <!-- 网页标题 -->
+    <!-- 页面刷新和跳转 -->
+    <meta http-equiv="refresh" content="3">
+    <meta http-equiv="refresh" content="3;url=https://example.com">
 
-    <p>hello</p><!-- 自动属于body的子标签 -->
+    <!-- 浏览器兼容性 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
+    <!-- 移动设备特定meta -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="theme-color" content="#000000">
+
+    <!-- 社交媒体分享 -->
+     <!-- Open Graph协议（Facebook） -->
+    <meta property="og:title" content="网页标题">
+    <meta property="og:description" content="网页描述">
+    <meta property="og:image" content="缩略图URL">
+    <meta property="og:url" content="网页URL">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="网页标题">
+    <meta name="twitter:description" content="网页描述">
+    <meta name="twitter:image" content="缩略图URL">
+
+    <!-- 内容安全策略 -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+
+    <!-- 自定义数据 -->
+    <meta name="custom-data" content="特殊信息">
 </head>
+<!-- #endregion meta -->
 
-<!-- 写在html标签外的标签，默认属于body的子标签或head的子标签 -->
-<!-- 打印head对象 -->
-<script>
-    var headzid = document.head
-    console.dir(head)
+<!-- #region link -->
+<head>
+    <link 
+        rel="关系类型"       
+        href="资源路径"
+        type="MIME类型"
+        media="媒体查询"      
+        crossorigin="anonymous" 
+    >
 
-    // 获取标签属性，包括自定义属性
-    console.log(head.attributes)
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 600px)">
 
-    // 打印子节点（注释也是节点）
-    console.log(head.childNodes)
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon-16x16.png" sizes="16x16">
+    <link rel="icon" href="favicon-32x32.png" sizes="32x32">
 
-    // 打印子元素
-    console.log(head.children)
-</script>
+    <link rel="preload" href="fonts/opensans.woff2" as="font" type="font/woff2" crossorigin>
+
+    <link rel="alternate" type="application/rss+xml" title="博客RSS" href="/rss">
+
+    <link rel="canonical" href="https://example.com/current-page">
+
+    <link rel="apple-touch-icon" href="ios-icon.png">
+    <link rel="manifest" href="/manifest.json">
+</head>
+<!-- #endregion link -->
+
+
+<!-- #region style -->
+<head>
+    <style scoped>
+        body { 
+            background-color: #f4f4f4; 
+        }
+    </style>
+</head>
+<!-- #endregion style -->
+
+<!-- #region script -->
+<head>
+    <script src="analytics.js"></script>
+    <script>
+        // 页面加载前执行的脚本
+        window.addEventListener('load', function() {
+            console.log('页面已加载');
+        });
+    </script>
+</head>
+<!-- #endregion script -->
+
+<!-- #region noscript -->
+<head>
+    <!-- 不支持JavaScript时 -->
+    <noscript>
+        <meta http-equiv="refresh" content="0; url=no-js-version.html">
+    </noscript>
+</head>
+<!-- #endregion noscript -->
+
+<!-- #region base -->
+<head>
+    <base href="https://example.com/">
+    <base target="_blank">
+</head>
+<!-- #endregion base -->
