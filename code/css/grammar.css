@@ -1,12 +1,12 @@
-/* # region grammar */
+/* #region grammar */
 /* CSS语法：选择器 { 以及一条或多条声明 }  */
 p {
   /* 声明：属性 : 属性值 ; */
   font-size: 16px;
 }
-/* # endregion grammar */
+/* #endregion grammar */
 
-/* # region err */
+/* #region err */
 /* 样式规则如果存在错误，解析器会选择忽略，并不会影响其他样式规则。 */
 #app {
   /* 无效样式 */
@@ -16,9 +16,9 @@ p {
   border: rgb(192, 13, 13) 1px solid;
 }
 
-/* # endregion err */
+/* #endregion err */
 
-/* # region inherit */
+/* #region inherit */
 .parent {
   color: red; /* 文本颜色会被继承 */
   font-family: Arial, sans-serif; /* 字体会被继承 */
@@ -37,9 +37,9 @@ p {
   color: inherit; /* 继承父元素的颜色 */
   margin: 0; /* 覆盖父元素的外边距 */
 }
-/* # endregion inherit */
+/* #endregion inherit */
 
-/* # region cascading */
+/* #region cascading */
 /* 相同权重下，后定义会覆盖先定义的样式 */
 p { color: blue; }        /* 先定义 */
 p { color: green; }       /* 后定义，覆盖前面的 */
@@ -57,9 +57,9 @@ div { color: blue; }        /* 0001 */
 #id { color: red; }         /* 0100 */
 ul > li { list-style: none; } /* 0002 */
 #hello div p { font-weight: bold;} /* 0102 */
-/* # endregion cascading */
+/* #endregion cascading */
 
-/* # region var */
+/* #region var */
 /* 定义变量，必须以--开头 */
 :root {
   --main-color: #3498db;  /* 主色调 */
@@ -73,5 +73,5 @@ body {
   /* 可以有备选值 */
   color: var(--text-color, black);  
 }
-/* # endregion var */
+/* #endregion var */
 

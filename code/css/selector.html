@@ -1,0 +1,105 @@
+<!-- 基础选择器 -->
+
+<!-- #region basic -->
+<h1 class="c1"></h1>
+<span class="c1"></span>
+<h1 id="a1"></h1>
+
+<!-- 多类样式声明，以空格分开，通过js操纵类名，可以实现样式切换 -->
+<p class="one two three"></p>
+
+<style>
+  h1{ /* 标签选择器 */ }
+  #a1{ /* ID选择器 */ }
+  .c1{ /* 类选择器 */ }
+  span.c1{ /* 标签选择器+类选择器一起使用 */ }
+
+  /* 后面定义的样式覆盖了之前定义的样式（.three覆盖了.one） */
+  .one{
+    color: aquamarine;
+  }
+  .two{
+    background-color: bisque;
+  }
+  .three{
+    color: black;
+  }
+</style>
+<!-- #endregion basic -->
+
+<!-- 结构选择器 -->
+<!-- #region struct -->
+<div id="a1">
+    <div>
+        <div>
+            <h1 id="hh"></h1>
+            <p></p>
+            <p></p>
+            <span></span>
+        </div>
+        <p></p>
+    </div>  
+</div>
+
+<style>
+  h1,p{} /* 并集选择器 */
+  #a1 p{} /* 后代选择器 */
+  #a1 > div{} /* 子代选择器 */
+  #hh + p{} /* 相邻兄弟选择器 */
+  #hh ~ p{} /* 通用兄弟选择器 */
+</style>
+<!-- #endregion struct -->
+
+<!-- 属性选择器 -->
+<!-- #region attr -->
+<h1 class="hello"></h1>
+<a href="https://123.com"></a>
+<a href=""></a>
+
+<style>
+  h1[class] {} /* 选择具有 class 属性的h1标签 */
+  h1[class][id] {} /* 选择具有多个属性的标签 */
+  a[href="https://123.com"] {} /* 选择拥有某个具体属性值的样式*/
+
+  h2[name^="a"] {}
+  h2[name$="com"] {}
+  h2[name*="xiao"] {}
+  h2[name~="mi"] {}
+  h2[name|="abc"] {}
+</style>
+<!-- #endregion attr -->
+
+<!-- 伪类选择器 -->
+<!-- #region v-class -->
+<!-- CSS 伪类 是添加到选择器的关键字，作用是，选择具有特殊状态的元素。 -->
+<style>
+    a:link{}
+    a:visited{}
+    a:hover{}
+    a:active{}
+
+    input:focus{}
+    input:hover{}
+    input:active{}
+    input:checked + label{}
+    input:valid{}
+
+    div:target{}
+    span:first-child{}
+    span:nth-child(2){}
+
+    :root{}
+    :empty{}
+</style>
+<!-- #endregion v-class -->
+
+<!-- 伪元素选择器 -->
+<!-- #region v-ele -->
+<!-- 伪元素是一个附加至选择器末的关键词，允许你对被选择元素的特定部分修改样式。 -->
+<style>
+    p::first-line{}
+    p::first-letter{}
+    span::before{}
+    span::after{}
+</style>
+<!-- #endregion v-ele -->
