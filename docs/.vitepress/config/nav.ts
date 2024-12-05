@@ -3,7 +3,7 @@ import { DefaultTheme } from "vitepress";
 export const nav: DefaultTheme.NavItem[] = [
     {
         text:"前端",
-        link:"/fe/framework-vue"
+        link:"/fe/html"
     },
     {
         text:"408",
