@@ -1,0 +1,32 @@
+/* #region translate */
+.translate{
+  transform: translateX(100px);
+  transform: translateY(200px);
+  transform: translateZ(300px);
+  
+  transform: translate(100px,200px);
+  transform: translate3d(100px,200px,300px);
+}
+/* #endregion translate */
+
+/* #region scale */
+.scale{
+  transform: scaleX(50%);
+  transform: scaleY(100px);
+  transform: scaleZ(30px);
+  
+  transform: scale(50%,100px);
+  transform: scale3d(50%,100px,30px);
+}
+/* #endregion scale */
+
+/* #region rotate */
+.rotate{
+  transform: rotateX();
+  transform: rotateY();
+  transform: rotateZ();
+  
+  transform: rotate();
+  transform: rotate3d();
+}
+/* #endregion rotate */

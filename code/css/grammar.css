@@ -1,0 +1,77 @@
+/* #region grammar */
+/* CSS语法：选择器 { 以及一条或多条声明 }  */
+p {
+  /* 声明：属性 : 属性值 ; */
+  font-size: 16px;
+}
+/* #endregion grammar */
+
+/* #region err */
+/* 样式规则如果存在错误，解析器会选择忽略，并不会影响其他样式规则。 */
+#app {
+  /* 无效样式 */
+  hello: red;
+
+  /* 但不影响后面的 border 规则使用 */
+  border: rgb(192, 13, 13) 1px solid;
+}
+
+/* #endregion err */
+
+/* #region inherit */
+.parent {
+  color: red; /* 文本颜色会被继承 */
+  font-family: Arial, sans-serif; /* 字体会被继承 */
+  font-size: 18px; /* 字体大小会被继承 */
+  margin: 20px; /* 不会被继承 */
+  padding: 10px; /* 不会被继承 */
+}
+
+.child {
+  font-size: inherit; /* 强制继承父元素的字体大小 */
+  margin: inherit; /* 强制继承父元素的外边距 */
+}
+
+
+.child-override {
+  color: inherit; /* 继承父元素的颜色 */
+  margin: 0; /* 覆盖父元素的外边距 */
+}
+/* #endregion inherit */
+
+/* #region cascading */
+/* 相同权重下，后定义会覆盖先定义的样式 */
+p { color: blue; }        /* 先定义 */
+p { color: green; }       /* 后定义，覆盖前面的 */
+
+/* important 设置权重最高 */
+div { color: blue !important; }  /* 这条规则会覆盖其他任何color规则 */
+div { color: green; }            /* 这个规则会被忽略 */
+
+/* 
+权重计算=(内联, ID, 类/属性/伪类, 元素/伪元素)
+原则上，选择器越详细，权重越高
+*/
+div { color: blue; }        /* 0001 */
+.class { color: green; }    /* 0010 */
+#id { color: red; }         /* 0100 */
+ul > li { list-style: none; } /* 0002 */
+#hello div p { font-weight: bold;} /* 0102 */
+/* #endregion cascading */
+
+/* #region var */
+/* 定义变量，必须以--开头 */
+:root {
+  --main-color: #3498db;  /* 主色调 */
+  --font-size: 16px;      /* 字体大小 */
+}
+
+/* 使用变量 */
+body {
+  background-color: var(--main-color);
+  font-size: var(--font-size);
+  /* 可以有备选值 */
+  color: var(--text-color, black);  
+}
+/* #endregion var */
+

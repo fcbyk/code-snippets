@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- #region link -->
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="screen.css" media="screen">
+    <link rel="stylesheet" href="print.css" media="print">
+    <link rel="stylesheet" href="screen.css" media="screen,print">
+    <!-- #endregion link -->
+</head>
+<body>
+    <style>
+        /* #region import */
+        @import url(screen.css) screen;
+        @import url(print.css) print;
+        @import url(screen.css) screen,print;
+        /* #endregion import */
+    </style>
+
+    <!-- #region tag -->
+    <style media="print">
+    </style>
+    <!-- #endregion tag -->
+    
+    <style>
+        /* #region media */
+        @media screen {
+            h1 {
+                font-size: 3em;
+                color: blue;
+            }
+        }
+
+        @media print {
+            h1 {
+                font-size: 8em;
+                color: red;
+            }
+
+            h2,
+            hr {
+                display: none;
+            }
+        }
+        /* #endregion media */
+    </style>
+</body>
+</html>

@@ -1,0 +1,34 @@
+/* #region float */
+.float{
+  float: right;
+  float: left;
+  clear: both;
+}
+/* #endregion float */
+
+/* #region position */
+.position{
+  position: static;
+  position: absolute;
+  position: relative;
+  position: fixed;
+  position: sticky;
+}
+
+.off{
+  position: absolute;
+  left: 100px;
+  right: 100px;
+  top: 100px;
+  bottom: 100px;
+}
+/* #endregion position */
+
+/* #region z */
+.top{
+  z-index: 2;
+}
+.bottom{
+  z-index: 1;
+}
+/* #endregion z */

@@ -1,0 +1,40 @@
+/* #region basic */
+div {
+    animation-name: hello;
+    animation-duration: 3s;
+}
+
+@keyframes hello {
+    from { }
+    to { }
+}
+/* #endregion basic */
+
+/* #region demo */
+div {
+    width: 100px;
+    height: 100px;
+    background-color: #e67e22;
+    animation-name: demo;
+    animation-duration: 3s;
+}
+
+@keyframes demo {
+    0% {}
+
+    25% {
+        transform: translateX(300%);
+    }
+
+    50% {
+        transform: translate(300%, 300%);
+    }
+
+    75% {
+        transform: translate(0, 300%);
+    }
+
+    to {}
+}
+/* #endregion demo */
+

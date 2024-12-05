@@ -1,0 +1,43 @@
+/* #region basic */
+@font-face {
+  font-family: "hello";
+  src: url("SourceHanSansSC-Light.otf") format("opentype"),
+    url("SourceHanSansSC-Heavy.otf") format("opentype");
+}
+
+span {
+  font-family: "hello";
+  font-weight: bold;
+  font-size: larger;
+  color: brown;
+  font-style: italic;
+
+  font: bold italic 20px/1.5 'Courier New', Courier, monospace;
+}
+/* #endregion basic */
+
+/* #region p */
+p{
+    line-height: 2em;
+    word-spacing: 2em;
+    letter-spacing: 1rem;
+    text-indent: 2rem;
+    white-space: nowrap;
+
+    overflow-wrap: break-word;
+    text-overflow: ellipsis;
+
+    text-align: center;
+    vertical-align: middle;
+    writing-mode: vertical-rl;
+}
+/* #endregion p */
+
+/* #region style */
+span{
+    font-variant: small-caps;
+    text-transform: capitalize;
+    text-decoration: line-through;
+    text-shadow: rgba(13, 6, 89, 0.8) 3px 3px 5px;
+}
+/* #endregion style */

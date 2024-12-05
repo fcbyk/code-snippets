@@ -1,0 +1,29 @@
+/* #region attr */
+.attr {
+  transition-property: all;
+  transition-delay: 1ms;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+  
+  transition: all linear 1s 1ms;
+}
+/* #endregion attr */
+
+/* #region demo */
+div {
+    width: 150px;
+    height: 150px;
+    background-color: #34495e;
+    border-radius: 50%;
+    opacity: 0.2;
+    transition-property: background-color, transform, opacity, border-radius;
+    transition-duration: 3s;
+}
+
+div:hover {
+    opacity: 1;
+    border-radius: 0;
+    transform: scale(2) rotate(180deg);
+    background-color: #e67e22;
+}
+/* #endregion demo */

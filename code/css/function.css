@@ -1,0 +1,30 @@
+#linear {
+  /* 渐变一般用在背景颜色中使用 */
+  background: linear-gradient(red, green);
+
+  /* 渐变角度 */
+  background: linear-gradient(30deg, red, green);
+
+  /* 向某个具体方向渐变 */
+  background: linear-gradient(to right, red, green);
+  background: linear-gradient(to left, red, green);
+  background: linear-gradient(to top left, red, green);
+  background: linear-gradient(to right bottom, red, green);
+
+  /* 设置多个颜色 */
+  background: linear-gradient(
+    red,
+    rgb(0, 0, 200),
+    green,
+    rgba(122, 211, 100, 0)
+  );
+}
+
+div {
+  background: radial-gradient(red, blue, green);
+  background: radial-gradient(100px 200px, red, blue, green);
+  background: radial-gradient(at bottom left, red, blue);
+  background: radial-gradient(at bottom right, red, blue);
+  background: radial-gradient(at center left, red, blue);
+  background: radial-gradient(at 50% 100%, red, blue);
+}

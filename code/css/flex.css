@@ -1,0 +1,25 @@
+.box{
+  display: inline-flex;
+  display: flex;
+  
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+
+  justify-content: center;
+  align-content: flex-start;
+  
+  align-items: center;
+}
+
+#ele1{
+  align-self: stretch;
+  
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 200px;
+  
+  flex:1 0 200px;
+  
+  order: 1;
+}
