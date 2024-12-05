@@ -1,0 +1,20 @@
+// #region var
+$width: 5em;
+
+#main {
+  width: $width;
+}
+// #endregion var
+
+// #region var-1
+// 变量支持块级作用域
+// 局部变量添加 !global 转变为全局变量
+#main {
+  $width: 5em !global;
+  width: $width;
+}
+
+#sidebar {
+  width: $width;
+}
+// #endregion var-1

@@ -18,7 +18,7 @@ const fe: DefaultTheme.SidebarItem[] = [
         items: [
           { text: "CSS", link: "css" },
           { text: "Less", link: "less" },
-          { text: "Scss", link: "scss" },
+          { text: "Sass", link: "sass" },
         ],
       },
       {

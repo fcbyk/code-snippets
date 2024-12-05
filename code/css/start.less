@@ -1,0 +1,216 @@
+// #region var-0
+@width: 10px;
+@height: @width + 10px;
+
+#header {
+  width: @width;
+  height: @height;
+}
+
+// 编译后
+#header {
+  width: 10px;
+  height: 20px;
+}
+// #endregion var-0
+
+// #region var-1
+@my-selector: banner;
+@property: color;
+@images: "../img";
+
+@themes: "../../src/themes";
+@import "@{themes}/tidal-wave.less";
+
+.@{my-selector} {
+  font-weight: bold;
+  line-height: 40px;
+  margin: 0 auto;
+  @{property}: #0ee;
+  background-@{property}: #999;
+  background: url("@{images}/white-sand.png");
+}
+// #endregion var-1
+
+// #region var-2
+// 一个变量被声明多次，会取最后一次的值，并从当前作用域往外寻找变量。
+@var: 0;
+.class {
+  @var: 1;
+  .brass {
+    @var: 2;
+    three: @var;
+    @var: 3;
+  }
+  one: @var;
+}
+
+//编译后
+.class {
+  one: 1;
+}
+.class .brass {
+  three: 3;
+}
+// #endregion var-2
+
+// #region nesting-0
+#header {
+  color: black;
+  .navigation {
+    font-size: 12px;
+  }
+  .logo {
+    width: 300px;
+  }
+}
+
+// 编译为
+#header {
+  color: black;
+}
+#header .navigation {
+  font-size: 12px;
+}
+#header .logo {
+  width: 300px;
+}
+// #endregion nesting-0
+
+// #region nesting-1
+.header {
+  a {
+    color: blue;
+    &:hover {
+      color: green;
+    }
+  }
+}
+.button {
+  &-ok {
+    background-image: url("ok.png");
+  }
+  &-cancel {
+    background-image: url("cancel.png");
+  }
+
+  &-custom {
+    background-image: url("custom.png");
+  }
+}
+
+// 编译为
+.header a {
+  color: blue;
+}
+.header a:hover {
+  color: green;
+}
+.button-ok {
+  background-image: url("ok.png");
+}
+.button-cancel {
+  background-image: url("cancel.png");
+}
+.button-custom {
+  background-image: url("custom.png");
+}
+// #endregion nesting-1
+
+// #region mixins-0
+// 定义混合
+.bordered {
+  border-top: dotted 1px black;
+  border-bottom: solid 2px black;
+}
+
+// 使用混合
+#menu a {
+  color: #111;
+  .bordered();
+}
+
+.post a {
+  color: red;
+  .bordered();
+}
+// #endregion mixins-0
+
+// #region mixins-1
+.border(@width, @style, @color) {
+  border: @width @style @color;
+}
+div {
+  .border(1px, solid, #ccc);
+}
+
+// 编译为
+div {
+  border: 1px solid #ccc;
+}
+// #endregion mixins-1
+
+// #region mixins-2
+.border(@width, @style, @color: #ccc) {
+  border: @width @style @color;
+}
+div {
+  .border(1px, solid);
+}
+#app {
+  // 可以在向混合传参是指定参数名称，从而不需要按顺序传入
+  .border(@style: solid, @color: red, @width: 100px);
+}
+// #endregion mixins-2
+
+// #region mixins-3
+// @arguments 变量包含了传入的所有参数
+.box-shadow(@x: 0, @y: 0, @blur: 1px, @color: #000) {
+  -webkit-box-shadow: @arguments;
+  -moz-box-shadow: @arguments;
+  box-shadow: @arguments;
+}
+.big-block {
+  .box-shadow(2px, 5px);
+}
+
+//编译为
+.big-block {
+  -webkit-box-shadow: 2px 5px 1px #000;
+  -moz-box-shadow: 2px 5px 1px #000;
+  box-shadow: 2px 5px 1px #000;
+}
+// #endregion mixins-3
+
+// #region op
+// 所有操作数被转换成相同的单位
+@conversion-1: 5cm + 10mm; // 结果是 6cm
+@conversion-2: 2 - 3cm - 5mm; // 结果是 -1.5cm
+
+// conversion is impossible
+@incompatible-units: 2 + 5px - 3cm; // 结果是 4px
+
+// example with variables
+@base: 5%;
+@filler: @base * 2; // 结果是 10%
+@other: @base + @filler; // 结果是 15%
+// #endregion op
+
+// #region extend
+nav ul {
+  &:extend(.inline);
+  background: blue;
+}
+.inline {
+  color: red;
+}
+
+// 编译为
+nav ul {
+  background: blue;
+}
+.inline,
+nav ul {
+  color: red;
+}
+// #endregion extend
