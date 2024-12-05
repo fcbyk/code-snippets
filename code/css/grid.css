@@ -1,0 +1,48 @@
+.box{
+  display: inline-grid;
+  display: grid;
+  
+  /* 划分格子 */
+  grid-template-rows: 10vh 20vh 10vh;
+  grid-template-rows: 30vw 1fr;
+  
+  grid-template: 10vh 20vh 10vh/ 30vw 1fr;
+  
+  /* 栅格线命名 */
+  grid-template-rows: [r1-start] 100px [r1-end r2-start] 100px [r2-end r3-start] 100px [r3-end];
+  grid-template-columns: [c1-start] 100px [c1-end c2-start] 100px [c2-start c3-start] 100px [c3-end];
+  
+  /* 区域命名 */
+  grid-template-rows: 80px 1fr 50px;
+  grid-template-columns: 100px 1fr 50px 60px;
+  grid-template-areas: "header header header header"
+        "nav main main aside"
+        "footer footer footer footer";
+        
+  grid-template:
+      'header . .' 10vh
+      '. main .' 20vh
+      'footer footer .' 10vh;
+    
+  row-gap: 10px;
+  column-gap: 20px;
+  gap: 10px 20px;
+}
+
+#ele{
+  /* 格子定位 */
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
+  
+  /* 栅格线定位 */
+  grid-row-start: r2-start;
+  grid-row-end: r2-end;
+  grid-column-start: c1-end;
+  grid-column-end: c3-start; 
+  
+  /* 区域定位 */
+  grid-area: header;
+}
+

@@ -1,0 +1,22 @@
+/* #region table */
+.table{
+    display: table-cell;
+    display: table;
+    
+    caption-side: top;
+    border-collapse: collapse;
+    border-spacing: 10px 20px;
+
+    empty-cells: hide;
+}
+/* #endregion table */
+
+/* #region list */
+ul{
+    list-style-type: none;
+    list-style-image: linear-gradient(45deg, red, black);
+    list-style-position: inside;
+
+    list-style: circle inside;
+}
+/* #endregion list */

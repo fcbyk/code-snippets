@@ -1,0 +1,11 @@
+div{
+    background-color: rgb(84, 48, 22);
+    background-image: url(xj-small.png), url(bg.png);
+    background-repeat: no-repeat;
+    background-position: 100px 100px;
+    background-clip: border-box;
+    background-attachment: fixed;
+    background-size: cover;
+
+    background: red url(xj-small.png) no-repeat right 50% fixed;
+}

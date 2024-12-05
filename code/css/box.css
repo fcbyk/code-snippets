@@ -1,0 +1,80 @@
+/* #region margin */
+#m{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 50px;
+  margin-left: 30px;
+  
+  margin: 10px;
+}
+/* #endregion margin */
+
+/* #region padding */
+#p{
+    padding-top:25px;
+    padding-bottom:25px;
+    padding-right:50px;
+    padding-left:50px;
+    
+    padding:10px 5px 15px 20px;
+}
+/* #endregion padding */
+
+/* #region border */
+div{
+  border-bottom-style: dashed;
+  border-style: dotted;
+
+  border-top-width: thin;
+  border-width: thin;
+
+  border-right-color: bisque;
+  border-color: blanchedalmond;
+
+  border-left: solid white thin;
+  border: solid black 1px;
+
+  border-top-left-radius: 10px;
+  border-radius: 10px;
+}
+/* #endregion border */
+
+/* #region content */
+div{
+  height: 100px;
+  width: 100px;
+  width: max-content;
+
+  min-width: auto;
+  max-height: max-content;
+}
+/* #endregion content */
+
+/* #region outline */
+div{
+  outline-color: wheat;
+  outline-style: dotted;
+  outline-width: 2px;
+  outline:green dotted thick;
+}
+/* #endregion outline */
+
+/* #region shadow */
+div{
+  box-shadow: 10px 10px 5px rgba(100, 100, 100, .5);
+}
+/* #endregion shadow */
+
+/* #region display */
+#a{
+  display: inline-block;
+  display: inline;
+  display: block;
+}
+#b{
+  visibility: hidden;
+  opacity: 0.5;
+  overflow: scroll;
+  box-sizing: border-box;
+}
+/* #endregion display */
