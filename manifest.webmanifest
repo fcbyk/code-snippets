@@ -1,0 +1,20 @@
+{
+    "name": "SNIPPETS",
+    "short_name": "SNIPPETS",
+    "start_url": "/",
+    "display": "standalone",
+    "icons": [
+      {
+        "src": "/logo.svg",
+        "sizes": "any",
+        "type": "image/svg+xml"
+      },
+      {
+        "src": "/logo.png",
+        "sizes": "512x512 200x200 144x144 128x128 64x64 32x32 24x24 16x16",
+        "type": "image/png"
+      }
+    ]
+  }
+
+  
