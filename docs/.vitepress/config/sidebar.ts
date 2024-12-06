@@ -40,6 +40,14 @@ const fe: DefaultTheme.SidebarItem[] = [
   },
 ];
 
+// 后端目录
+const be: DefaultTheme.SidebarItem[] = [
+  {
+    text: "Java",
+    link:"/be/java"
+  },
+];
+
 // 操作系统目录
 const os: DefaultTheme.SidebarItem[] = [
   {
@@ -84,5 +92,6 @@ const os: DefaultTheme.SidebarItem[] = [
 export const sidebar: DefaultTheme.Sidebar = {
   "/": index,
   "/fe/": fe,
+  "/be/": be,
   "/os/": os
 };

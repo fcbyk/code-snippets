@@ -5,6 +5,10 @@ outline: [2,3]
 
 # HTML
 
+[MDN](https://developer.mozilla.org/zh-CN/docs/Web/HTML)<span style="margin-right: 10px;"></span>
+[菜鸟教程](https://www.runoob.com/html/html-tutorial.html)<span style="margin-right: 10px;"></span>
+[MurphyChen's Notes](https://docs.mphy.top/#/HTML/ch01)<span style="margin-right: 10px;"></span>
+
 ### 标签概述
 ::: code-group
 <<< @/../code/html/tag.html#struct [结构]
