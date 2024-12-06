@@ -20,6 +20,8 @@ import java.io.PrintWriter;
 * */
 
 // 这是 Servlet 3.0 引入的注解，用于将 Servlet 映射到指定的 URL 路径。在这个例子中，Servlet 将会处理 /hello 路径的请求
+
+// #region servlet
 @WebServlet("/hello")
 public class Servlet_ implements Servlet {
 
@@ -60,3 +62,4 @@ public class Servlet_ implements Servlet {
     // 用于在 Servlet 实例被销毁前进行清理工作。在这个方法中，你可以释放资源、关闭数据库连接等。
     public void destroy() { }
 }
+// #endregion servlet

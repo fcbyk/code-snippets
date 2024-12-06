@@ -21,10 +21,8 @@ import com.fcbyk.javaee.web.pojo.Student;
 
 public class JDBC {
 
+    // #region connection
     public static Connection getconn() throws SQLException {
-        // 注册驱动，MySQL5之后的驱动包不用写
-        // Class.forName("com.mysql.jdbc.Driver");
-
         // 获取连接：如果连接的是本机mysql并且端口是默认的 3306 可以简化书写
         return DriverManager.getConnection(
                 "jdbc:mysql:///javaee?useSSL=false",
@@ -32,14 +30,18 @@ public class JDBC {
                 "123456"
         );
     }
+    // #endregion connection
+
 
     public static void testConnect() throws Exception {
 
+        // #region statement
         // 获取连接对象
         Connection conn = getconn();
 
         // 获取执行sql的对象 Statement
         Statement stmt = conn.createStatement();
+        // #endregion statement
 
         try {
             // ============开启事务==========
@@ -69,6 +71,8 @@ public class JDBC {
 
     // sql查询
     public static void selectPrint() throws Exception {
+
+        // #region resultSet
         Connection conn = getconn();
         Statement stmt = conn.createStatement();
 
@@ -88,6 +92,7 @@ public class JDBC {
         rs.close();
         stmt.close();
         conn.close();
+        // #endregion resultSet
     }
 
     // sql查询,把结果放集合里面

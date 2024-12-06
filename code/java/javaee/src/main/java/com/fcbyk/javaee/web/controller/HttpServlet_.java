@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 // HttpServlet：对 HTTP协议封装的 Servlet实现类
 
 // urlPattern: 一个Servlet可以配置多个访问路径
+// #region http-servlet
 @WebServlet(urlPatterns = {"/demo2","/demo02"})
 public class HttpServlet_ extends HttpServlet {
 
@@ -25,4 +26,4 @@ public class HttpServlet_ extends HttpServlet {
         System.out.println("post...");
     }
 }
-
+// #endregion http-servlet
