@@ -19,13 +19,13 @@ public class TestMyBatis {
     @Test
     // 查询,把结果放集合里面,打印输出
     public void test02() throws IOException {
-        MyBatis.mapperDev();
+//        MyBatis.mapperDev();
     }
 
     @Test
     // 查询一行数据,打印输出
     public void test03() throws IOException {
-        MyBatis.annotationDev();
+//        MyBatis.annotationDev();
     }
 }
 

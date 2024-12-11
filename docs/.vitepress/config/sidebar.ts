@@ -46,6 +46,10 @@ const be: DefaultTheme.SidebarItem[] = [
     text: "Java",
     link:"/be/java"
   },
+  {
+    text: "MyBaits",
+    link:"/be/mb"
+  }
 ];
 
 // 操作系统目录

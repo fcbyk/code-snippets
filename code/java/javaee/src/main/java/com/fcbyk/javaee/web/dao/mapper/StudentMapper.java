@@ -12,6 +12,7 @@ import java.util.List;
  * 在 Mapper 接口中定义方法，方法名就是SQL映射文件中sql语句的id，并保持参数类型和返回值类型一致
  * */
 
+// #region index
 public interface StudentMapper {
 
     List<Student> selectAll();
@@ -20,4 +21,4 @@ public interface StudentMapper {
     @Select("select * from Student where Sno = #{sno}")
     Student select(int sno);
 }
-
+// #endregion index
