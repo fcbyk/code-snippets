@@ -8,12 +8,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.Collections;
 
+// #region index
 @SpringBootApplication
 @MapperScan("com.fcbyk.springboot.mapper")
-public class SpringbootApplication implements CommandLineRunner {
+public class Application implements CommandLineRunner {
 
     public static void main(String[] args) {
-        SpringApplication app = new SpringApplication(SpringbootApplication.class);
+        SpringApplication app = new SpringApplication(Application.class);
 
         // 设置不显示Banner和简化日志输出
         app.setBannerMode(Banner.Mode.OFF);
@@ -28,3 +29,4 @@ public class SpringbootApplication implements CommandLineRunner {
         System.out.println(" ➜  URL: http://localhost:8080/");
     }
 }
+// #endregion index

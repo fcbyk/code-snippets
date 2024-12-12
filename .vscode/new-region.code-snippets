@@ -1,6 +1,6 @@
 {
 	"new region": {
-		"scope": "javascript,typescript",
+		"scope": "javascript,typescript,java",
 		"prefix": "new-s",
 		"body": [
 			"// #region $1",

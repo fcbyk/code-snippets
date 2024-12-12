@@ -152,14 +152,14 @@ public class ApplicationContext_ {
     @Test
     // 使用注解
     public void annotationDev(){
-
+        // #region aioc
         // 通过配置类生成的容器，无法使用xml里的bean，因为ComponentScan扫描不了xml里的包
-        // 注入时会可能出现不存在bean等错误
         ApplicationContext ctx = new AnnotationConfigApplicationContext(SpringConfig.class);
 
         Student student = (Student) ctx.getBean("student");
         student.setterDI();
         Book sanguo = (Book) ctx.getBean("mybook");
         System.out.println(sanguo.getName());
+        // #endregion aioc
     }
 }

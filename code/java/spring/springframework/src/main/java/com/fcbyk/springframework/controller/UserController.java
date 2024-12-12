@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+// #region index
 @Controller
 public class UserController {
 
@@ -14,3 +15,4 @@ public class UserController {
         return "{'info':'springmvc'}";
     }
 }
+// #endregion index
