@@ -26,11 +26,13 @@
         </dependency>
 
         <!-- Spring的依赖包 -->
+        <!-- #region sp -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>5.2.10.RELEASE</version>
         </dependency>
+        <!-- #endregion sp -->
 
         <!--  数据库连接池Druid  -->
         <dependency>

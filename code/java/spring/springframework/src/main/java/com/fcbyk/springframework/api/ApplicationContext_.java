@@ -77,6 +77,7 @@ public class ApplicationContext_ {
     @Test
     // 获取bean的方式
     public void getBean_(){
+        // #region getioc
         //获取IOC容器
         ApplicationContext ctx = new ClassPathXmlApplicationContext("applicationContext.xml");
 
@@ -89,6 +90,7 @@ public class ApplicationContext_ {
         book2.test();
         Book book3 = (Book)ctx.getBean("book2");
         book3.test();
+        // #endregion getioc
 
         // IOC容器里面的bean默认为单例（可以改为非单例）
         // 表现层对象，业务层对象，数据层对象，工具对象适合交给容器进行管理

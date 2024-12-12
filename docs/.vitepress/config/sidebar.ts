@@ -49,6 +49,10 @@ const be: DefaultTheme.SidebarItem[] = [
   {
     text: "MyBaits",
     link:"/be/mb"
+  },
+  {
+    text: "Spring",
+    link:"/be/spring"
   }
 ];
 
