@@ -32,9 +32,7 @@ const fe: DefaultTheme.SidebarItem[] = [
       {
         text: "框架",
         base: "/fe/framework-",
-        items: [
-          { text: "Vue", link: "vue" },
-        ],
+        items: [{ text: "Vue", link: "vue" }],
       },
     ],
   },
@@ -43,63 +41,70 @@ const fe: DefaultTheme.SidebarItem[] = [
 // 后端目录
 const be: DefaultTheme.SidebarItem[] = [
   {
-    text: "Java",
-    link:"/be/java"
+    text: "后端",
+    items: [
+      {
+        text: "Java",
+        link: "/be/java",
+        items: [
+          {
+            text: "MyBaits",
+            link: "/be/mb",
+          },
+          {
+            text: "Spring",
+            link: "/be/spring",
+          },
+        ],
+      },  
+    ],
   },
-  {
-    text: "MyBaits",
-    link:"/be/mb"
-  },
-  {
-    text: "Spring",
-    link:"/be/spring"
-  }
 ];
 
 // 操作系统目录
 const os: DefaultTheme.SidebarItem[] = [
   {
-    text:"操作系统",
-    items:[
-        {
-          text:"软件",
-          base: "/os/sf-",
-          items:[
-            {
-              text:"Docker",
-              link:"docker"
-            },
-            {
-              text:"Git",
-              link:"git"
-            },
-            {
-              text:"Nginx",
-              link:"nginx"
-            }
-          ]
-        },
-        {
-          text:"数据库",
-          base: "/os/db-",
-          items:[
-            {
-              text:"MySQL",
-              link:"mysql"
-            },
-            {
-              text:"Redis",
-              link:"redis"
-            }
-          ]
-        }    
-      ]
-  }
-]
+    text: "操作系统",
+    items: [
+      {
+        text: "软件",
+        base: "/os/sf-",
+        items: [
+          {
+            text: "Docker",
+            link: "docker",
+          },
+          {
+            text: "Git",
+            link: "git",
+          },
+          {
+            text: "Nginx",
+            link: "nginx",
+          },
+        ],
+      },
+      {
+        text: "数据库",
+        base: "/os/db-",
+        items: [
+          {
+            text: "MySQL",
+            link: "mysql",
+          },
+          {
+            text: "Redis",
+            link: "redis",
+          },
+        ],
+      },
+    ],
+  },
+];
 
 export const sidebar: DefaultTheme.Sidebar = {
   "/": index,
   "/fe/": fe,
   "/be/": be,
-  "/os/": os
+  "/os/": os,
 };

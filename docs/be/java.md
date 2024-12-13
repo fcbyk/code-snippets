@@ -9,8 +9,13 @@ outline: [2,3]
 
 ## 语法
 
-<!-- ### Hello World
-<<< @/../code/java/javase/src/main/java/com/fcbyk/javase/Application.java#hello -->
+### 相关文件
+::: code-group
+<<< @/../code/java/javase/src/main/java/com/fcbyk/javase/file/JavaFile.java [.java]
+```class [.class]
+java文件编译后生成的字节码文件
+```
+:::
 
 ### 变量与常量
 ::: code-group
@@ -61,9 +66,40 @@ outline: [2,3]
 ::: code-group
 <<< @/../code/java/javase/src/main/java/com/fcbyk/javase/grammar/Method.java#def [定义]
 <<< @/../code/java/javase/src/main/java/com/fcbyk/javase/grammar/Method.java#reload [重载]
-::: 
+:::
 
-<!-- ### 类
+### 类（面向对象）
+
+#### 基本
+::: code-group
+<<< @/../code/java/javase/src/main/java/com/fcbyk/javase/grammar/OOP.java#base [定义]
+<<< @/../code/java/javase/src/main/java/com/fcbyk/javase/grammar/OOP.java#attr [属性]
+<<< @/../code/java/javase/src/main/java/com/fcbyk/javase/grammar/OOP.java#meth [方法]
+:::
+
+#### 创建对象
+::: code-group
+<<< @/../code/java/javase/src/main/java/com/fcbyk/javase/grammar/OOP.java#cmeth [构造方法]
+<<< @/../code/java/javase/src/main/java/com/fcbyk/javase/grammar/OOP.java#new [new]
+:::
+<!-- #### 封装 -->
+
+#### 封装
+::: code-group
+<<< @/../code/java/javase/src/main/java/com/fcbyk/javase/grammar/Encapsulation.java#pr [限制访问]
+<<< @/../code/java/javase/src/main/java/com/fcbyk/javase/grammar/Encapsulation.java#set [setter]
+<<< @/../code/java/javase/src/main/java/com/fcbyk/javase/grammar/Encapsulation.java#get [getter]
+:::
+
+#### 继承
+> Java是单继承，一个类只能继承一个直接父类
+::: code-group
+<<< @/../code/java/javase/src/main/java/com/fcbyk/javase/grammar/Extends.java#f [父类]
+:::
+
+#### 多态
+
+<!-- 
 
 ### 接口
 
